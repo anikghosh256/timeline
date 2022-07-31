@@ -34,24 +34,24 @@ const logout = () => {
 
         <JetBanner />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div>
+            <nav class="bg-white border-b border-gray-100 fixed w-100 w-full top-0">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                    <JetApplicationMark class="block h-9 w-auto" />
+                                <Link :href="route('timeline')" class="font-bold text-4xl">
+                                    TimeLine
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </JetNavLink>
+                                <!-- <JetNavLink :href="route('timeline')" :active="route().current('timeline')">
+                                    TimeLine
+                                </JetNavLink> -->
                             </div>
                         </div>
 
@@ -208,8 +208,8 @@ const logout = () => {
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                        <JetResponsiveNavLink :href="route('timeline')" :active="route().current('timeline')">
+                            TimeLine
                         </JetResponsiveNavLink>
                     </div>
 
@@ -294,6 +294,7 @@ const logout = () => {
                     </div>
                 </div>
             </nav>
+            <div class="divider"></div>
 
             <!-- Page Heading -->
             <header v-if="$slots.header" class="bg-white shadow">
@@ -309,3 +310,11 @@ const logout = () => {
         </div>
     </div>
 </template>
+<style>
+    body{
+        background-color: #fafafa;
+    }
+    .divider {
+        height: 65px;
+    }
+</style>

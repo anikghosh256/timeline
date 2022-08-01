@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +31,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/timeline', function () {
-        return Inertia::render('TimeLine');
-    })->name('timeline');
+    Route::get('/timeline', [PostController::class, 'index'])->name('timeline');
 });

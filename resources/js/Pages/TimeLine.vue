@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Jetstream/Welcome.vue';
+import PostForm from '@/Components/PostForm.vue';
 </script>
 
 <template>
@@ -83,6 +84,7 @@ import Welcome from '@/Jetstream/Welcome.vue';
                 </div>
             </div>
         </div>
+        <PostForm />
     </AppLayout>
 </template>
 
@@ -90,6 +92,6 @@ import Welcome from '@/Jetstream/Welcome.vue';
     .main-content{
         max-width: 650px;
         margin: 0 auto;
-        margin-bottom: 200px;
+        margin-bottom: 110px;
     }
 </style>

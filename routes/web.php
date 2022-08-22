@@ -32,4 +32,5 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/timeline', [PostController::class, 'index'])->name('timeline');
+    Route::post('/post', [PostController::class, 'store'])->name('post');
 });

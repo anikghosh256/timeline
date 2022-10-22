@@ -12,8 +12,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        // get last 10 posts order by id asc and return them as a resource
-        $posts = Post::latest()->take(10)->get();
+        // get last 10 posts or loggedin user order by id asc and return them as a resource 
+        $posts = Post::where('user_id', auth()->user()->id)->latest()->take(10)->get();
         // sort posts by id desc
         $posts = PostResource::collection($posts)->sortBy('id');
         return Inertia::render('TimeLine', [
